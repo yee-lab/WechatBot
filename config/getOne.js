@@ -2,7 +2,7 @@
  * @Author: Yee
  * @Date: 2020-03-11 14:56:57
  * @LastEditors: Yee
- * @LastEditTime: 2020-03-13 12:31:12
+ * @LastEditTime: 2020-03-13 14:27:20
  * @FilePath: \WechatBot\config\getOne.js
  * @Description:获取每日一句 && 天行机器人聊天逻辑
  */
@@ -51,10 +51,7 @@ async function getnCov() {
 //获取墨迹天气
 async function getWether() {
   //采用城市加地区的形式 , 便于修改
-  let url =
-    'https://tianqi.moji.com/weather/china/' +
-    'beijing/' +
-    'changping-district';
+  let url = 'https://tianqi.moji.com/weather/china/' + '城市/' + '地区';
   try {
     let res = await superagent.req(url, 'GET');
     let $ = cheerio.load(res.text);
@@ -112,7 +109,7 @@ async function getWether() {
 async function getReply(word) {
   let url = TXHOST + 'robot/';
   let res = await superagent.req(url, 'GET', {
-    key: '68ecce7e702e9c86d4668dd0d9eb41fb',
+    key: 'APIKEY',
     question: word, //提问
     mode: 1, //工作模式，宽松0[默认]、精确1，私有2
     datatype: 0, //返回类型，文本0[默认]、语音1
@@ -146,7 +143,7 @@ async function getReply(word) {
 async function addRoom(that, msg) {
   if (msg.text() == '加群') {
     console.log(that);
-    const room = await that.Room.find({ id: '22224682717@chatroom' });
+    const room = await that.Room.find({ id: '******@chatroom' });
     //判断是否在房间中 , 在就提示并return false/true为了便于在onMessage()私人对话中进行判断
     if (room) {
       if (await room.has(msg.from())) {

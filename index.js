@@ -1,7 +1,7 @@
 /*
  * @Date: 2020-03-07 04:25:14
  * @LastEditors: Yee
- * @LastEditTime: 2020-03-13 12:19:23
+ * @LastEditTime: 2020-03-13 14:29:57
  * @FilePath: \WechatBot\index.js
  * @Description:入口文件
  */
@@ -13,10 +13,10 @@ const schedule = require('./config/schedule');
 const formatDate = require('./config/formatDate');
 const superagent = require('./config/getOne');
 
-const token = 'puppet_padplus_54af780e447cfa1c';
+const token = 'puppet_padplus_******'; //YOUR TOKEN
 const puppet = 'wechaty-puppet-padplus';
-const name = 'Mr.Robot';
-const roomId = '22224682717@chatroom';
+const name = '机器人名字';
+const roomId = '*****@chatroom';
 
 //二维码生成
 function onScan(qrcode, status) {
@@ -159,8 +159,8 @@ async function initDay() {
     let logMsg;
     //发送个指定联系人或者他的备注名字
     let contact =
-      (await bot.Contact.find({ name: '小梦大半' })) ||
-      (await bot.Contact.find({ alias: '小梦大半' }));
+      (await bot.Contact.find({ name: '联系人' })) ||
+      (await bot.Contact.find({ alias: '联系人备注' }));
     let one = await superagent.getOne(); //获取每日一句
     let weather = await superagent.getWether(); //获取天气信息
     let today = await formatDate.formatDate(new Date()); //获取今天的日期
