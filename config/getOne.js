@@ -2,7 +2,7 @@
  * @Author: Yee
  * @Date: 2020-03-11 14:56:57
  * @LastEditors: Yee
- * @LastEditTime: 2020-03-13 14:27:20
+ * @LastEditTime: 2020-03-13 20:21:52
  * @FilePath: \WechatBot\config\getOne.js
  * @Description:获取每日一句 && 天行机器人聊天逻辑
  */
@@ -142,7 +142,6 @@ async function getReply(word) {
 
 async function addRoom(that, msg) {
   if (msg.text() == '加群') {
-    console.log(that);
     const room = await that.Room.find({ id: '******@chatroom' });
     //判断是否在房间中 , 在就提示并return false/true为了便于在onMessage()私人对话中进行判断
     if (room) {
