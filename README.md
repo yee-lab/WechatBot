@@ -34,7 +34,7 @@
 |-- README.md                //项目说明
 |-- config
 |   |-- formatDate.js       //获取时间
-|   |-- getOne.js           //一些模块 , 包含 : 每日一句 获取全国疫情 获取墨迹天气 天性机器人配置 加群关键字
+|   |-- getOne.js           //一些模块 , 包含 : 每日一句 获取全国疫情 获取墨迹天气 天行机器人配置 加群关键字
 |   |-- schedule.js         //定时任务的配置
 |   `-- superagent.js       //superagent的配置
 |-- index.js                //文件入口及一些实现功能模块
